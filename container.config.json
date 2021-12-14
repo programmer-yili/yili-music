@@ -1,0 +1,15 @@
+{
+  "containerPort": 80,
+  "minNum": 0,
+  "maxNum": 50,
+  "cpu": 1,
+  "mem": 1,
+  "policyType": "cpu",
+  "policyThreshold": 60,
+  "envParams": {},
+  "customLogs": "stdout",
+  "dataBaseName":"yili-music",
+  "executeSQLs":[
+    "CREATE DATABASE IF NOT EXISTS yili-music;"
+  ]
+}
