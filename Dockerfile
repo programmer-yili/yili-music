@@ -18,7 +18,7 @@ RUN mvn -f /app/pom.xml clean package
 FROM alpine:3.13
 
 ENV MYSQL_HOST 10.0.224.15
-ENV MYSQL_USERNAME music
+ENV MYSQL_USER_NAME music
 ENV MYSQL_PASSWORD Music2021
 ENV DATABASE_NAME yili-music
 
