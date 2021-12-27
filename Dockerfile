@@ -37,4 +37,4 @@ COPY --from=build /app/target/yili-music-0.0.1.jar .
 EXPOSE 80
 
 # 执行启动命令
-CMD ["java", "-jar", "/app/yili-music-0.0.1.jar"]
+CMD ["java", "-jar", "/app/yili-music-0.0.1.jar", "--spring.profiles.active=test"]
