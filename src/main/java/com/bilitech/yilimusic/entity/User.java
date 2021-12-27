@@ -2,14 +2,17 @@ package com.bilitech.yilimusic.entity;
 
 import com.bilitech.yilimusic.enums.Gender;
 import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Data
-public class User extends AbstractEntity{
+public class User extends AbstractEntity implements UserDetails {
 
     @Column(unique = true)
     private String username;
@@ -25,11 +28,36 @@ public class User extends AbstractEntity{
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    private Boolean locked;
+    private Boolean locked = false;
 
-    private Boolean enabled;
+    private Boolean enabled = true;
 
     private String lastLoginIp;
 
     private Date lastLoginTime;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return !getLocked();
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return getEnabled();
+    }
 }
