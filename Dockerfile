@@ -12,7 +12,7 @@ COPY src /app/src
 COPY pom.xml /app
 
 # 执行代码编译命令
-RUN mvn -f /app/pom.xml clean package -Dspring.profiles.active=prod
+RUN mvn -f /app/pom.xml clean package -Dspring.profiles.active=test
 
 # 选择运行时基础镜像
 FROM alpine:3.13
@@ -37,4 +37,4 @@ COPY --from=build /app/target/yili-music-0.0.1.jar .
 EXPOSE 80
 
 # 执行启动命令
-CMD ["java", "-jar", "/app/yili-music-0.0.1.jar"]
+CMD ["java", "-jar", "/app/yili-music-0.0.1.jar", "--spring.profiles.active=test"]
