@@ -17,7 +17,7 @@ RUN mvn -f /app/pom.xml clean package -Dspring.profiles.active=test
 # 选择运行时基础镜像
 FROM alpine:3.13
 
-ENV MYSQL_HOST 10.0.224.2
+ENV MYSQL_HOST 10.0.224.17
 ENV MYSQL_USER_NAME music
 ENV MYSQL_PASSWORD Music2021
 ENV DATABASE_NAME yili-music
