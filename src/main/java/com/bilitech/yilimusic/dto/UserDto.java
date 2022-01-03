@@ -1,8 +1,9 @@
 package com.bilitech.yilimusic.dto;
 
-import com.bilitech.yilimusic.vo.RoleVo;
+import com.bilitech.yilimusic.enums.Gender;
 import lombok.Data;
 
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -13,5 +14,15 @@ public class UserDto {
 
     private String nickname;
 
-    private List<RoleVo> roles;
+    private List<RoleDto> roles;
+
+    private Gender gender;
+
+    private Boolean locked;
+
+    private Boolean enabled;
+
+    private String lastLoginIp;
+
+    private Date lastLoginTime;
 }
