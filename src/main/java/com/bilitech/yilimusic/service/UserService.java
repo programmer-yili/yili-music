@@ -1,5 +1,6 @@
 package com.bilitech.yilimusic.service;
 
+import com.bilitech.yilimusic.dto.TokenCreateRequest;
 import com.bilitech.yilimusic.dto.UserCreateRequest;
 import com.bilitech.yilimusic.dto.UserDto;
 import com.bilitech.yilimusic.dto.UserUpdateRequest;
@@ -22,4 +23,9 @@ public interface UserService extends UserDetailsService {
     void delete(String id);
 
     Page<UserDto> search(Pageable pageable);
+
+
+    String createToken(TokenCreateRequest tokenCreateRequest);
+
+    UserDto getCurrentUser();
 }
