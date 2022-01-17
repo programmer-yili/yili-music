@@ -24,7 +24,6 @@ public interface UserService extends UserDetailsService {
 
     Page<UserDto> search(Pageable pageable);
 
-
     String createToken(TokenCreateRequest tokenCreateRequest);
 
     UserDto getCurrentUser();
