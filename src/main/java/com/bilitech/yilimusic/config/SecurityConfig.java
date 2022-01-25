@@ -51,7 +51,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers("/swagger**/**")//
                 .antMatchers("/webjars/**")//
                 .antMatchers("/v3/**")//
-                .antMatchers("/doc.html");
+                .antMatchers("/doc.html")
+                .antMatchers("/weixin/**");
     }
 
     @Override
