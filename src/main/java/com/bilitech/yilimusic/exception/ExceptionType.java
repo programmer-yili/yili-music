@@ -12,7 +12,8 @@ public enum ExceptionType {
     USER_PASSWORD_NOT_MATCH(40001003, "用户名或密码错误"),
     USER_NOT_ENABLED(50001001, "用户未启用"),
     USER_LOCKED(50001002, "用户被锁定"),
-    MUSIC_NOT_FOUND(40402001, "歌曲不存在");
+    MUSIC_NOT_FOUND(40402001, "歌曲不存在"),
+    FILE_NOT_FOUND(40403001, "文件不存在");
 
 
     private final Integer code;

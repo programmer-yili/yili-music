@@ -5,6 +5,7 @@ import com.bilitech.yilimusic.enums.FileType;
 import com.bilitech.yilimusic.enums.Storage;
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -14,6 +15,7 @@ import javax.persistence.Enumerated;
 public class File extends AbstractEntity {
     private String name;
 
+    @Column(name = "file_key")
     private String key;
 
     private String ext;
