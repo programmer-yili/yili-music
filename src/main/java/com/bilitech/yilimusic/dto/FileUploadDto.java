@@ -14,10 +14,6 @@ public class FileUploadDto {
 
     private String fileId;
 
-    private String bucket;
-
-    private String region;
-
     private Long startTime;
 
     private Long expiredTime;

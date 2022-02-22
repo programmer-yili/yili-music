@@ -62,7 +62,7 @@ public class FileServiceImpl implements FileService {
     }
 
     // Todo: 后台设置当前Storage
-    private Storage getDefaultStorage() {
+    public Storage getDefaultStorage() {
         return Storage.COS;
     }
 

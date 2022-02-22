@@ -41,11 +41,13 @@ public class MusicController {
     }
 
     @PostMapping("/{id}/publish")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void publish(@PathVariable String id) {
         musicService.publish(id);
     }
 
     @PostMapping("/{id}/close")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void close(@PathVariable String id) {
         musicService.close(id);
     }

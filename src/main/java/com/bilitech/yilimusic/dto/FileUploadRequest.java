@@ -10,7 +10,7 @@ public class FileUploadRequest {
     @NotBlank(message = "文件名不能为空")
     private String name;
 
-    private Integer size;
+    private Long size;
 
     @NotBlank(message = "后缀名不能为空")
     private String ext;
