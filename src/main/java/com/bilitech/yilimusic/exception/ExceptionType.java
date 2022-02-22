@@ -13,7 +13,8 @@ public enum ExceptionType {
     USER_NOT_ENABLED(50001001, "用户未启用"),
     USER_LOCKED(50001002, "用户被锁定"),
     MUSIC_NOT_FOUND(40402001, "歌曲不存在"),
-    FILE_NOT_FOUND(40403001, "文件不存在");
+    FILE_NOT_FOUND(40403001, "文件不存在"),
+    PLAYLIST_NOT_FOUND(40404001, "歌单不存在");
 
 
     private final Integer code;

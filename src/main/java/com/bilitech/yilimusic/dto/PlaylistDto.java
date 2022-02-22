@@ -1,21 +1,26 @@
 package com.bilitech.yilimusic.dto;
 
-import com.bilitech.yilimusic.enums.MusicStatus;
+import com.bilitech.yilimusic.enums.PlayListStatus;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
-public class MusicDto {
+public class PlaylistDto {
     private String id;
 
     private String name;
 
-    private MusicStatus status;
-
     private String description;
 
-    private FileDto file;
+    private FileDto cover;
+
+    private PlayListStatus status;
+
+    private UserDto creator;
+
+    private List<MusicDto> musicList;
 
     private Date createdTime;
 
