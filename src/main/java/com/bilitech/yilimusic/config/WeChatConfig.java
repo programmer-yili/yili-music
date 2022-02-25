@@ -25,5 +25,4 @@ public class WeChatConfig {
         wxMpService.setWxMpConfigStorage(config);
         return wxMpService;
     }
-
 }

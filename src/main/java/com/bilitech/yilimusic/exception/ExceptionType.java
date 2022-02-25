@@ -14,6 +14,7 @@ public enum ExceptionType {
     USER_LOCKED(50001002, "用户被锁定"),
     MUSIC_NOT_FOUND(40402001, "歌曲不存在"),
     FILE_NOT_FOUND(40403001, "文件不存在"),
+    FILE_NOT_PERMISSION(40303002, "当前用户无权限修改文件"),
     PLAYLIST_NOT_FOUND(40404001, "歌单不存在");
 
 

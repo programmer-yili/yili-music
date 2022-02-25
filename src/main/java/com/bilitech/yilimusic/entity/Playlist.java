@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Data
-public class Playlist extends AbstractEntity {
+public class Playlist extends BaseEntity {
     private String name;
 
     private String description;

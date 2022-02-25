@@ -13,11 +13,11 @@ import java.util.Date;
 
 @MappedSuperclass
 @Data
-public abstract class AbstractEntity {
+public abstract class BaseEntity {
 
     @Id
     @GeneratedValue(generator = "ksuid")
-    @GenericGenerator(name="ksuid", strategy = "com.bilitech.yilimusic.utils.KsuidIdentifierGenerator")
+    @GenericGenerator(name = "ksuid", strategy = "com.bilitech.yilimusic.utils.KsuidIdentifierGenerator")
     private String id;
 
     @CreationTimestamp

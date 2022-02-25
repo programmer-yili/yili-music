@@ -38,6 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(CREATE_TOKEN_URL).permitAll()
                 .antMatchers(SITE_SETTING_URL).permitAll()
+                .antMatchers("/playlists/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(new JwtAuthorizationFilter(authenticationManager(), userService))
