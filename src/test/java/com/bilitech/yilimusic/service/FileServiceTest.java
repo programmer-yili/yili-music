@@ -10,12 +10,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 
 import java.io.IOException;
 
 @SpringBootTest
 @Slf4j
-class FileServiceTest {
+class FileServiceTest extends BaseService {
 
     private FileService fileService;
 
@@ -52,6 +53,7 @@ class FileServiceTest {
     }
 
     @Test
+    @WithMockUser(username = "yili")
     void finishUpload() throws IOException {
         FileUploadRequest fileUploadRequest = new FileUploadRequest();
         fileUploadRequest.setName("测试文件名");
