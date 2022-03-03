@@ -12,7 +12,7 @@ COPY src /app/src
 COPY pom.xml /app
 
 # 执行代码编译命令
-RUN mvn -f /app/pom.xml clean package -Dspring.profiles.active=test
+RUN mvn -f /app/pom.xml clean package -Dmaven.test.skip=true -Dspring.profiles.active=test
 
 # 选择运行时基础镜像
 FROM alpine:3.13
