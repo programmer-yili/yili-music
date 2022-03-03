@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public abstract class BaseService {
+public abstract class BaseTest {
 
     @Autowired
     UserService userService;

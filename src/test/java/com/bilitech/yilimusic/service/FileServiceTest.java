@@ -16,7 +16,7 @@ import java.io.IOException;
 
 @SpringBootTest
 @Slf4j
-class FileServiceTest extends BaseService {
+class FileServiceTest extends BaseTest {
 
     private FileService fileService;
 
