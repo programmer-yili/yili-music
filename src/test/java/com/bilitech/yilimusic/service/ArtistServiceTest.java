@@ -28,7 +28,6 @@ class ArtistServiceTest extends BaseTest {
         ArtistCreateRequest artistCreateRequest = new ArtistCreateRequest();
         artistCreateRequest.setName("周杰伦");
         artistCreateRequest.setRemark("Jay Chou");
-        artistCreateRequest.setPhotoId(photoId);
         ArtistDto artistDto = artistService.create(artistCreateRequest);
         Assertions.assertEquals(artistCreateRequest.getName(), artistDto.getName());
         Assertions.assertEquals(artistCreateRequest.getRemark(), artistDto.getRemark());
