@@ -6,9 +6,9 @@ import java.util.Date;
 
 @Data
 public abstract class BaseDto {
-    private String id;
-    
-    private Date createdTime;
+    protected String id;
 
-    private Date updatedTime;
+    protected Date createdTime;
+
+    protected Date updatedTime;
 }

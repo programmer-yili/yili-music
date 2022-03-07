@@ -1,17 +1,9 @@
 package com.bilitech.yilimusic.service;
 
-import com.bilitech.yilimusic.dto.MusicCreateRequest;
 import com.bilitech.yilimusic.dto.MusicDto;
-import com.bilitech.yilimusic.dto.MusicUpdateRequest;
+import com.bilitech.yilimusic.entity.Music;
 
-import java.util.List;
-
-public interface MusicService {
-    MusicDto create(MusicCreateRequest musicCreateRequest);
-
-    MusicDto update(String id, MusicUpdateRequest musicUpdateRequest);
-
-    List<MusicDto> list();
+public interface MusicService extends GeneralService<Music, MusicDto> {
 
     void publish(String id);
 
