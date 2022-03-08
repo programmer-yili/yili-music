@@ -4,8 +4,6 @@ import com.bilitech.yilimusic.dto.BaseDto;
 import com.bilitech.yilimusic.entity.BaseEntity;
 import com.bilitech.yilimusic.exception.BizException;
 import com.bilitech.yilimusic.service.GeneralService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
@@ -44,10 +42,5 @@ public abstract class GeneralServiceImpl<Entity extends BaseEntity, Dto extends 
     public void delete(String id) {
         Entity existedEntity = getEntity(id);
         getRepository().delete(existedEntity);
-    }
-
-    @Override
-    public Page<Dto> search(Dto searchDto, Pageable pageable) {
-        return null;
     }
 }
