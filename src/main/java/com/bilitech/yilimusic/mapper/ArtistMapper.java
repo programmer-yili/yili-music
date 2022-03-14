@@ -6,16 +6,12 @@ import com.bilitech.yilimusic.dto.ArtistUpdateRequest;
 import com.bilitech.yilimusic.entity.Artist;
 import com.bilitech.yilimusic.vo.ArtistVo;
 import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring", uses = {FileMapper.class, MusicMapper.class})
-public interface ArtistMapper {
+public interface ArtistMapper extends MapperInterface<Artist, ArtistDto> {
+    ArtistDto toDto(ArtistCreateRequest artistCreateRequest);
 
-    Artist createEntity(ArtistCreateRequest artistCreateRequest);
-
-    Artist updateEntity(@MappingTarget Artist artist, ArtistUpdateRequest artistUpdateRequest);
-
-    ArtistDto toDto(Artist artist);
+    ArtistDto toDto(ArtistUpdateRequest artistUpdateRequest);
 
     ArtistVo toVo(ArtistDto artistDto);
 }

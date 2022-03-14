@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class ArtistDto extends BaseDto {
+public class ArtistDto extends TraceableBaseDto {
     private String name;
 
     private String remark;
