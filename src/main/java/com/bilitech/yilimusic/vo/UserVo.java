@@ -18,5 +18,7 @@ public class UserVo extends BaseVo {
 
     private Boolean enabled;
 
+    private String openId;
+
     private List<RoleVo> roles;
 }
