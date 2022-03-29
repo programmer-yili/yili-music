@@ -3,12 +3,10 @@ package com.bilitech.yilimusic.dto;
 import com.bilitech.yilimusic.enums.PlayListStatus;
 import lombok.Data;
 
-import java.util.Date;
 import java.util.List;
 
 @Data
-public class PlaylistDto {
-    private String id;
+public class PlaylistDto extends TraceableBaseDto {
 
     private String name;
 
@@ -18,11 +16,11 @@ public class PlaylistDto {
 
     private PlayListStatus status;
 
-    private UserDto creator;
-
     private List<MusicDto> musicList;
 
-    private Date createdTime;
+    private Boolean recommended;
 
-    private Date updatedTime;
+    private Integer recommendFactor;
+
+    private Boolean special;
 }

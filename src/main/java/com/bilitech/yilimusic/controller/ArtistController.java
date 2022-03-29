@@ -3,6 +3,7 @@ package com.bilitech.yilimusic.controller;
 import com.bilitech.yilimusic.dto.ArtistCreateRequest;
 import com.bilitech.yilimusic.dto.ArtistSearchFilter;
 import com.bilitech.yilimusic.dto.ArtistUpdateRequest;
+import com.bilitech.yilimusic.dto.RecommendRequest;
 import com.bilitech.yilimusic.mapper.ArtistMapper;
 import com.bilitech.yilimusic.service.ArtistService;
 import com.bilitech.yilimusic.vo.ArtistVo;
@@ -11,9 +12,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/artists")
@@ -34,18 +32,23 @@ public class ArtistController {
     }
 
     @GetMapping
-    public List<ArtistVo> list() {
-        return artistService.list().stream().map(artistMapper::toVo).collect(Collectors.toList());
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public Page<ArtistVo> search(@Validated ArtistSearchFilter artistSearchFilter) {
+        return artistService.search(artistSearchFilter).map(artistMapper::toVo);
     }
 
-    @PostMapping("/search")
+    @PostMapping("/{id}/recommend")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public Page<ArtistVo> search(@Validated @RequestBody(required = false) ArtistSearchFilter filter) {
-        if (filter == null) {
-            filter = new ArtistSearchFilter();
-        }
-        return artistService.search(filter).map(artistMapper::toVo);
+    public ArtistVo recommend(@PathVariable String id, @Validated @RequestBody RecommendRequest recommendRequest) {
+        return artistMapper.toVo(artistService.recommend(id, recommendRequest.getRecommendFactor()));
     }
+
+    @PostMapping("/{id}/cancel_recommendation")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public ArtistVo cancelRecommendation(@PathVariable String id) {
+        return artistMapper.toVo(artistService.cancelRecommendation(id));
+    }
+
 
     @Autowired
     public void setArtistService(ArtistService artistService) {

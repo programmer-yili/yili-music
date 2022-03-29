@@ -21,5 +21,9 @@ public class Artist extends TraceableBaseEntity {
     @JoinTable(name = "artist_music", joinColumns = @JoinColumn(name = "artist_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "music_id", referencedColumnName = "id"))
     private List<Music> musicList;
 
-    private ArtistStatus status;
+    private ArtistStatus status = ArtistStatus.DRAFT;
+
+    private Boolean recommended = false;
+
+    private Integer recommendFactor = 0;
 }

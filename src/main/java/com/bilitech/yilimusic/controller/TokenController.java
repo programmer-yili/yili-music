@@ -3,7 +3,10 @@ package com.bilitech.yilimusic.controller;
 import com.bilitech.yilimusic.dto.TokenCreateRequest;
 import com.bilitech.yilimusic.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/tokens")
@@ -17,10 +20,6 @@ public class TokenController {
         return userService.createToken(tokenCreateRequest);
     }
 
-    @PostMapping("/mp")
-    public String createByMp(@RequestHeader(name = "X-WX-OPENID") String openId) {
-        return userService.createTokenByOpenId(openId);
-    }
 
     @Autowired
     public void setUserService(UserService userService) {

@@ -16,4 +16,8 @@ public class ArtistVo extends BaseVo {
     private List<MusicVo> musicDtoList;
 
     private ArtistStatus status;
+
+    private Boolean recommended;
+
+    private Integer recommendFactor;
 }

@@ -27,6 +27,4 @@ public interface UserService extends UserDetailsService {
     String createToken(TokenCreateRequest tokenCreateRequest);
 
     UserDto getCurrentUser();
-
-    String createTokenByOpenId(String openId);
 }
