@@ -32,7 +32,6 @@ public class ArtistController {
     }
 
     @GetMapping
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Page<ArtistVo> search(@Validated ArtistSearchFilter artistSearchFilter) {
         return artistService.search(artistSearchFilter).map(artistMapper::toVo);
     }

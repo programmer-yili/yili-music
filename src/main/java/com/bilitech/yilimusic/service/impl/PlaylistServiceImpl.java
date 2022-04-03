@@ -30,6 +30,11 @@ public class PlaylistServiceImpl extends TraceableGeneralServiceImpl<Playlist, P
         if (playlistSearchFilter.getRecommended() != null) {
             specs.add(new SearchCriteria("recommended", playlistSearchFilter.getRecommended(), SearchOperation.EQUAL));
         }
+
+        if (playlistSearchFilter.getSpecial() != null) {
+            specs.add(new SearchCriteria("special", playlistSearchFilter.getSpecial(), SearchOperation.EQUAL));
+        }
+        
         return repository.findAll(specs, playlistSearchFilter.toPageable()).map(mapper::toDto);
     }
 
