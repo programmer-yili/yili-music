@@ -1,6 +1,7 @@
 package com.bilitech.yilimusic.controller;
 
 import com.bilitech.yilimusic.dto.PaymentDto;
+import com.bilitech.yilimusic.dto.TokenCreateRequest;
 import com.bilitech.yilimusic.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,9 +17,10 @@ public class TokenController {
     UserService userService;
 
     @PostMapping
-    public String create(@RequestBody PaymentDto paymentDto) {
-        return paymentDto.toString();
+    public String create(@RequestBody TokenCreateRequest tokenCreateRequest) {
+        return userService.createToken(tokenCreateRequest);
     }
+
 
 
     @Autowired
