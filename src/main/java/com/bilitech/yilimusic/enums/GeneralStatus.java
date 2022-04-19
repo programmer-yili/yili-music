@@ -1,6 +1,6 @@
 package com.bilitech.yilimusic.enums;
 
-public enum ArtistStatus {
+public enum GeneralStatus {
     DRAFT,
     PUBLISHED,
     BLOCKED

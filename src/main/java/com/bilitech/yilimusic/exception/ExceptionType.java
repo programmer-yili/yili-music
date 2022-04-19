@@ -17,7 +17,8 @@ public enum ExceptionType {
     FILE_NOT_FOUND(40403001, "文件不存在"),
     FILE_NOT_PERMISSION(40303002, "当前用户无权限修改文件"),
     PLAYLIST_NOT_FOUND(40404001, "歌单不存在"),
-    ARTIST_NOT_FOUND(40405001, "歌手不存在");
+    ARTIST_NOT_FOUND(40405001, "歌手不存在"),
+    ALBUM_NOT_FOUND(40406001, "专辑不存在");
 
 
     private final Integer code;

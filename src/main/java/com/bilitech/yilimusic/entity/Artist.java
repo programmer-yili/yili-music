@@ -1,6 +1,6 @@
 package com.bilitech.yilimusic.entity;
 
-import com.bilitech.yilimusic.enums.ArtistStatus;
+import com.bilitech.yilimusic.enums.GeneralStatus;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,7 +21,7 @@ public class Artist extends TraceableBaseEntity {
     @JoinTable(name = "artist_music", joinColumns = @JoinColumn(name = "artist_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "music_id", referencedColumnName = "id"))
     private List<Music> musicList;
 
-    private ArtistStatus status = ArtistStatus.DRAFT;
+    private GeneralStatus status = GeneralStatus.DRAFT;
 
     private Boolean recommended = false;
 
