@@ -15,8 +15,14 @@ public class AlbumDto extends TraceableBaseDto {
     private FileDto cover;
 
     private GeneralStatus status;
-    
+
+    private Boolean recommended;
+
+    private Integer recommendFactor;
+
     private List<ArtistDto> artists;
 
     private List<MusicDto> musicList;
+
+
 }

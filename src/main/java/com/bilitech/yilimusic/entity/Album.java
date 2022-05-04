@@ -15,6 +15,10 @@ public class Album extends TraceableBaseEntity {
 
     private GeneralStatus status;
 
+    private Boolean recommended = false;
+
+    private Integer recommendFactor = 0;
+
     @OneToOne
     private File cover;
 

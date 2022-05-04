@@ -15,7 +15,10 @@ public class AlbumVo extends BaseVo {
 
     private GeneralStatus status;
 
+    private Boolean recommended;
 
+    private Integer recommendFactor;
+    
     private List<ArtistVo> artists;
 
     private List<MusicVo> musicList;
