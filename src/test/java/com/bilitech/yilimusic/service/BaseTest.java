@@ -1,10 +1,11 @@
 package com.bilitech.yilimusic.service;
 
-import com.bilitech.yilimusic.dto.UserCreateRequest;
-import com.bilitech.yilimusic.dto.UserDto;
-import com.bilitech.yilimusic.entity.User;
-import com.bilitech.yilimusic.enums.Gender;
-import com.bilitech.yilimusic.repository.UserRepository;
+import com.bilitech.yilimusic.core.dto.UserCreateRequest;
+import com.bilitech.yilimusic.core.dto.UserDto;
+import com.bilitech.yilimusic.core.entity.User;
+import com.bilitech.yilimusic.core.enums.Gender;
+import com.bilitech.yilimusic.core.repository.UserRepository;
+import com.bilitech.yilimusic.core.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

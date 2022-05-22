@@ -1,7 +1,8 @@
 package com.bilitech.yilimusic.service;
 
-import com.bilitech.yilimusic.dto.SiteSettingDto;
-import com.bilitech.yilimusic.enums.Storage;
+import com.bilitech.yilimusic.core.dto.SiteSettingDto;
+import com.bilitech.yilimusic.core.enums.Storage;
+import com.bilitech.yilimusic.core.service.SettingService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

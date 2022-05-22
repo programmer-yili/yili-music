@@ -1,10 +1,11 @@
 package com.bilitech.yilimusic.service;
 
-import com.bilitech.yilimusic.dto.FileDto;
-import com.bilitech.yilimusic.dto.FileUploadDto;
-import com.bilitech.yilimusic.dto.FileUploadRequest;
-import com.bilitech.yilimusic.enums.FileStatus;
-import com.bilitech.yilimusic.enums.Storage;
+import com.bilitech.yilimusic.core.dto.FileDto;
+import com.bilitech.yilimusic.core.dto.FileUploadDto;
+import com.bilitech.yilimusic.core.dto.FileUploadRequest;
+import com.bilitech.yilimusic.core.enums.FileStatus;
+import com.bilitech.yilimusic.core.enums.Storage;
+import com.bilitech.yilimusic.core.service.FileService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

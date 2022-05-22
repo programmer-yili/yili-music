@@ -1,9 +1,19 @@
 package com.bilitech.yilimusic.service;
 
-import com.bilitech.yilimusic.dto.*;
-import com.bilitech.yilimusic.enums.MusicStatus;
-import com.bilitech.yilimusic.mapper.ArtistMapper;
-import com.bilitech.yilimusic.mapper.MusicMapper;
+import com.bilitech.yilimusic.core.dto.BaseDto;
+import com.bilitech.yilimusic.core.dto.FileDto;
+import com.bilitech.yilimusic.core.dto.FileUploadDto;
+import com.bilitech.yilimusic.core.dto.FileUploadRequest;
+import com.bilitech.yilimusic.core.service.FileService;
+import com.bilitech.yilimusic.music.dto.ArtistCreateRequest;
+import com.bilitech.yilimusic.music.dto.ArtistDto;
+import com.bilitech.yilimusic.music.dto.MusicCreateRequest;
+import com.bilitech.yilimusic.music.dto.MusicDto;
+import com.bilitech.yilimusic.music.enums.MusicStatus;
+import com.bilitech.yilimusic.music.mapper.ArtistMapper;
+import com.bilitech.yilimusic.music.mapper.MusicMapper;
+import com.bilitech.yilimusic.music.service.ArtistService;
+import com.bilitech.yilimusic.music.service.MusicService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
