@@ -3,23 +3,23 @@ package com.bilitech.yilimusic.core.service.impl;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.bilitech.yilimusic.core.config.SecurityConfig;
-import com.bilitech.yilimusic.core.dto.TokenCreateRequest;
-import com.bilitech.yilimusic.core.dto.UserCreateRequest;
-import com.bilitech.yilimusic.core.dto.UserDto;
-import com.bilitech.yilimusic.core.dto.UserUpdateRequest;
+import com.bilitech.yilimusic.core.dto.*;
 import com.bilitech.yilimusic.core.entity.User;
 import com.bilitech.yilimusic.core.exception.BizException;
 import com.bilitech.yilimusic.core.exception.ExceptionType;
 import com.bilitech.yilimusic.core.mapper.UserMapper;
 import com.bilitech.yilimusic.core.repository.UserRepository;
+import com.bilitech.yilimusic.core.repository.specs.SearchCriteria;
+import com.bilitech.yilimusic.core.repository.specs.SearchOperation;
+import com.bilitech.yilimusic.core.repository.specs.UserSpecification;
 import com.bilitech.yilimusic.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -64,8 +64,13 @@ public class UserServiceImpl extends BaseService implements UserService {
     }
 
     @Override
-    public Page<UserDto> search(Pageable pageable) {
-        return repository.findAll(pageable).map(mapper::toDto);
+    public Page<UserDto> search(UserSearchFilter userSearchFilter) {
+        UserSpecification specs = new UserSpecification();
+        // ToDo: 需要重构
+        if (!Objects.equals(userSearchFilter.getNickname(), "")) {
+            specs.add(new SearchCriteria("nickname", userSearchFilter.getNickname(), SearchOperation.MATCH));
+        }
+        return repository.findAll(specs, userSearchFilter.toPageable()).map(mapper::toDto);
     }
 
     @Override

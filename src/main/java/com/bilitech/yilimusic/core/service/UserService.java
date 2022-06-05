@@ -1,12 +1,8 @@
 package com.bilitech.yilimusic.core.service;
 
-import com.bilitech.yilimusic.core.dto.TokenCreateRequest;
-import com.bilitech.yilimusic.core.dto.UserCreateRequest;
-import com.bilitech.yilimusic.core.dto.UserDto;
-import com.bilitech.yilimusic.core.dto.UserUpdateRequest;
+import com.bilitech.yilimusic.core.dto.*;
 import com.bilitech.yilimusic.core.entity.User;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 
@@ -22,7 +18,7 @@ public interface UserService extends UserDetailsService {
 
     void delete(String id);
 
-    Page<UserDto> search(Pageable pageable);
+    Page<UserDto> search(UserSearchFilter searchFilter);
 
     String createToken(TokenCreateRequest tokenCreateRequest);
 
