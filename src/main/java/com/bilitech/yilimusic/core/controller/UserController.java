@@ -26,7 +26,7 @@ public class UserController {
 
     @GetMapping
     @ApiOperation("用户检索")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasPermission('USER_LIST')")
     Page<UserVo> search(@Validated UserSearchFilter userSearchFilter) {
         return userService.search(userSearchFilter).map(userMapper::toVo);
     }

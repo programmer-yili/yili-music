@@ -8,4 +8,5 @@ import java.util.Optional;
 
 public interface MusicRepository extends JpaRepository<Music, String>, JpaSpecificationExecutor<Music> {
     Optional<Music> findById(String id);
+
 }
